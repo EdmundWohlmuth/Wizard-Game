@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://jo5lg2y6vq75"]
+
+[ext_resource type="Texture2D" uid="uid://ceijsjbag8uqb" path="res://icon.svg" id="1_4skoe"]
+[ext_resource type="Script" path="res://Scripts/Character/CharacterMovement.gd" id="1_p41bj"]
+[ext_resource type="Script" path="res://Scenes/Character/SpellManager.gd" id="1_x4d73"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tron0"]
+radius = 32.0
+height = 122.0
+
+[node name="Character_Scene" type="Node2D"]
+
+[node name="SpellManager" type="Node2D" parent="."]
+script = ExtResource("1_x4d73")
+
+[node name="CharacterBody" type="CharacterBody2D" parent="."]
+script = ExtResource("1_p41bj")
+
+[node name="Char_Visual" type="Sprite2D" parent="CharacterBody"]
+scale = Vector2(0.5, 1)
+texture = ExtResource("1_4skoe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody"]
+shape = SubResource("CapsuleShape2D_tron0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
