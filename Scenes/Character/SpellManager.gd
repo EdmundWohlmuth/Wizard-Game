@@ -10,17 +10,19 @@ var is_casting:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+  GameManager.spellmanager = self
+  
   temp_spell_list.append(["Up", "Up", "Right", "Left", "Down", "Down"])
   temp_spell_list.append(["Up", "Down", "Left", "Left", "Left"])
   temp_spell_list.append(["Up", "Up", "Up"])
 
-  
+# read player inputs  
 func _input(event):
   # Swich between casting and not casting, as well as clearing the input tracker
   if Input.is_action_just_pressed("Casting"):
-    if is_casting:
-      stop_casting(false)
+    if is_casting: stop_casting(false)
     else: start_casting()
+    SignalBus.emit_signal("open_spellbook")
   
   if event.is_pressed() && is_casting:
     match event.as_text():
@@ -39,6 +41,7 @@ func _input(event):
   
     if input_tracker.size() > 0: check_spells()
 
+# check to see if inputs equal a spell and cast them if true
 func check_spells():
   # iterate through all spellbook spells
   for x in temp_spell_list.size() - 1:
@@ -47,6 +50,7 @@ func check_spells():
       if i > temp_spell_list[x].size(): return
       elif check_same_spell(temp_spell_list[x], input_tracker):
         print("casting " + str(temp_spell_list[x]))
+        SignalBus.emit_signal("open_spellbook")
         stop_casting(true)
     
 func check_same_spell(array1:Array, array2:Array):

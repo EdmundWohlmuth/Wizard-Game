@@ -15,6 +15,11 @@ run/main_scene="res://Scenes/World/test_world.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://Scripts/GameManager.gd"
+SignalBus="*res://Scripts/SignalBus.gd"
+
 [input]
 
 Right={
