@@ -26,7 +26,8 @@ theme_override_constants/separation = 6
 clip_contents = false
 custom_minimum_size = Vector2(300, 20)
 layout_mode = 2
-text = "TEST"
+bbcode_enabled = true
+text = "[color=white]TEST [color=gray]TEST"
 scroll_active = false
 tab_size = 2
 shortcut_keys_enabled = false
@@ -35,7 +36,8 @@ shortcut_keys_enabled = false
 clip_contents = false
 custom_minimum_size = Vector2(300, 20)
 layout_mode = 2
-text = "TEST"
+bbcode_enabled = true
+text = "[color=white]TEST [color=gray]TEST"
 scroll_active = false
 tab_size = 2
 shortcut_keys_enabled = false
@@ -44,7 +46,8 @@ shortcut_keys_enabled = false
 clip_contents = false
 custom_minimum_size = Vector2(300, 20)
 layout_mode = 2
-text = "TEST"
+bbcode_enabled = true
+text = "[color=white]TEST [color=gray]TEST"
 scroll_active = false
 tab_size = 2
 shortcut_keys_enabled = false
@@ -53,7 +56,8 @@ shortcut_keys_enabled = false
 clip_contents = false
 custom_minimum_size = Vector2(300, 20)
 layout_mode = 2
-text = "TEST"
+bbcode_enabled = true
+text = "[color=white]TEST [color=gray]TEST"
 scroll_active = false
 tab_size = 2
 shortcut_keys_enabled = false
@@ -62,7 +66,8 @@ shortcut_keys_enabled = false
 clip_contents = false
 custom_minimum_size = Vector2(300, 20)
 layout_mode = 2
-text = "TEST"
+bbcode_enabled = true
+text = "[color=white]TEST [color=gray]TEST"
 scroll_active = false
 tab_size = 2
 shortcut_keys_enabled = false
@@ -71,7 +76,8 @@ shortcut_keys_enabled = false
 clip_contents = false
 custom_minimum_size = Vector2(300, 20)
 layout_mode = 2
-text = "TEST"
+bbcode_enabled = true
+text = "[color=white]TEST [color=gray]TEST"
 scroll_active = false
 tab_size = 2
 shortcut_keys_enabled = false
@@ -80,7 +86,8 @@ shortcut_keys_enabled = false
 clip_contents = false
 custom_minimum_size = Vector2(300, 20)
 layout_mode = 2
-text = "TEST"
+bbcode_enabled = true
+text = "[color=white]TEST [color=gray]TEST"
 scroll_active = false
 tab_size = 2
 shortcut_keys_enabled = false
@@ -89,7 +96,8 @@ shortcut_keys_enabled = false
 clip_contents = false
 custom_minimum_size = Vector2(300, 20)
 layout_mode = 2
-text = "TEST"
+bbcode_enabled = true
+text = "[color=white]TEST [color=gray]TEST"
 scroll_active = false
 tab_size = 2
 shortcut_keys_enabled = false

@@ -15,6 +15,8 @@ func _ready():
   temp_spell_list.append(["Up", "Up", "Right", "Left", "Down", "Down"])
   temp_spell_list.append(["Up", "Down", "Left", "Left", "Left"])
   temp_spell_list.append(["Up", "Up", "Up"])
+  temp_spell_list.append(["Down", "Left", "Left", "Down"])
+  temp_spell_list.append(["Left", "Right", "Up", "Down", "Up", "Up", "Down"])
 
 # read player inputs  
 func _input(event):
@@ -39,19 +41,25 @@ func _input(event):
         #print(event.as_text())
         input_tracker.append("Left")
   
-    if input_tracker.size() > 0: check_spells()
+    if input_tracker.size() > 0: 
+      check_spells()
 
 # check to see if inputs equal a spell and cast them if true
 func check_spells():
   # iterate through all spellbook spells
-  for x in temp_spell_list.size() - 1:
+  for x in temp_spell_list.size():
     for i in input_tracker.size():
-
+    
       if i > temp_spell_list[x].size(): return
+        
       elif check_same_spell(temp_spell_list[x], input_tracker):
         print("casting " + str(temp_spell_list[x]))
         SignalBus.emit_signal("open_spellbook")
-        stop_casting(true)
+        stop_casting(true) 
+      
+      elif is_casting && i < temp_spell_list[x].size():
+        if temp_spell_list[x][i] != input_tracker[i]: 
+          GameManager.ui_manager.gameplay.hide_spell(x)
     
 func check_same_spell(array1:Array, array2:Array):
   if array1.size() != array2.size(): return false

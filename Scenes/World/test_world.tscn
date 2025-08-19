@@ -1,22 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://bpwwjpekisstm"]
+[gd_scene load_steps=5 format=3 uid="uid://bpwwjpekisstm"]
 
 [ext_resource type="PackedScene" uid="uid://jo5lg2y6vq75" path="res://Scenes/Character/character_scene.tscn" id="1_fiuur"]
 [ext_resource type="PackedScene" uid="uid://bgi5ygl8cey8h" path="res://Scenes/UI/ui_manager.tscn" id="2_s0kox"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_exdro"]
+[sub_resource type="TileSet" id="TileSet_0wuqg"]
+tile_shape = 1
+tile_size = Vector2i(64, 32)
+
+[sub_resource type="TileSet" id="TileSet_nhgnj"]
+tile_shape = 1
+tile_size = Vector2i(64, 32)
 
 [node name="TestWorld" type="Node2D"]
 
 [node name="Character_Scene" parent="." instance=ExtResource("1_fiuur")]
-
-[node name="Floor" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
-position = Vector2(0, 322)
-shape = SubResource("WorldBoundaryShape2D_exdro")
 
 [node name="ui_manager" parent="." instance=ExtResource("2_s0kox")]
 offset_left = -575.0
 offset_top = -325.0
 offset_right = -575.0
 offset_bottom = -325.0
+
+[node name="Foreground Tilemap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_0wuqg")
+format = 2
+
+[node name="Background Tilemap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_nhgnj")
+format = 2
