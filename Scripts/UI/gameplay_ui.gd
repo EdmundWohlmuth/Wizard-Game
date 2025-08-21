@@ -35,4 +35,3 @@ func toggle_spelllist():
 # hides spells mid casting to inform player as to what can be cast 
 func hide_spell(spell:int):
   spell_container.get_child(spell).visible = false
-
