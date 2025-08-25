@@ -12,5 +12,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m1lmf")
 
-[node name="GameplayUI" parent="." instance=ExtResource("2_s3c87")]
-layout_mode = 1
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameplayUI" parent="CanvasLayer" instance=ExtResource("2_s3c87")]

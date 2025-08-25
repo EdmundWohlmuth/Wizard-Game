@@ -1,5 +1,6 @@
 extends Node
 
+var character
 var spellmanager
 var ui_manager
 

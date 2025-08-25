@@ -19,6 +19,9 @@ enum char_states
 }
 var char_state:char_states = char_states.STANDING
 
+func _ready():
+  GameManager.character = self
+
 func _physics_process(delta):
   # Get the input direction and handle the movement/deceleration.
   var direction_x = Input.get_axis("Right", "Left")
@@ -40,20 +43,12 @@ func _physics_process(delta):
   if !direction_x && !direction_y: 
     change_state(char_states.STANDING)
     is_moving = false
-
-  if is_moving:
-    if velocity.x > 0:
-      char_visual.scale.x = char_scale
-      if velocity.x >= 0.5: change_state(char_states.RUNING)
-      else: change_state(char_states.WALKING)
-        
-    elif velocity.x < 0:
-      char_visual.scale.x = -char_scale
-      if velocity.x <= -0.5: change_state(char_states.RUNING)
-      else: change_state(char_states.WALKING)
-
+  
+  animated_char_move()
+      
   move_and_slide()
 
+# handles character states
 func change_state(new_state:char_states):
   match new_state:
     char_states.STANDING:
@@ -69,7 +64,18 @@ func change_state(new_state:char_states):
     char_states.DYING:
       pass
 
-#flips the character to be facing left or right
-func flip_char():
-  pass
+#flips the character to be facing left or right and calls change state
+func animated_char_move():
+  if velocity.x > 0:
+    char_visual.scale.x = char_scale
+    if velocity.x >= 0.5: change_state(char_states.RUNING)
+    else: change_state(char_states.WALKING)
+        
+  elif velocity.x < 0:
+    char_visual.scale.x = -char_scale
+    if velocity.x <= -0.5: change_state(char_states.RUNING)
+    else: change_state(char_states.WALKING)
   
+  elif velocity.y != 0:
+    if velocity.y <= -0.5 || velocity.y > -0.5: change_state(char_states.RUNING)
+    else: change_state(char_states.WALKING)

@@ -18,6 +18,8 @@ func _ready():
   temp_spell_list.append(["Down", "Left", "Left", "Down"])
   temp_spell_list.append(["Left", "Right", "Up", "Down", "Up", "Up", "Down"])
 
+
+
 # read player inputs  
 func _input(event):
   # Swich between casting and not casting, as well as clearing the input tracker

@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://jo5lg2y6vq75"]
+[gd_scene load_steps=25 format=3 uid="uid://jo5lg2y6vq75"]
 
 [ext_resource type="Script" uid="uid://bthfqsvp4sqdp" path="res://Scripts/Character/CharacterMovement.gd" id="1_p41bj"]
 [ext_resource type="Script" uid="uid://7uaj63j5421o" path="res://Scenes/Character/SpellManager.gd" id="1_x4d73"]
 [ext_resource type="Texture2D" uid="uid://cr8e8eec2657a" path="res://Art/Player Sprite Sheet/OZTEST.png" id="3_lal31"]
+[ext_resource type="PackedScene" uid="uid://bgi5ygl8cey8h" path="res://Scenes/UI/ui_manager.tscn" id="4_jyfwo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tron0"]
 radius = 32.0
@@ -175,4 +176,17 @@ sprite_frames = SubResource("SpriteFrames_t2f8w")
 animation = &"Running"
 frame_progress = 0.204109
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="CharacterBody"]
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
+
+[node name="ui_manager" parent="CharacterBody" instance=ExtResource("4_jyfwo")]
+offset_left = -575.0
+offset_top = -325.0
+offset_right = -575.0
+offset_bottom = -325.0
